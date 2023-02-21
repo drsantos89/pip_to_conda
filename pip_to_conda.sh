@@ -15,7 +15,7 @@ for package in $pip_packages; do
     echo "Processing package: $package"
 
     # Try to install the package with conda
-    if conda install -y $package; then
+    if conda install -y $package --force-reinstall; then
         # If the installation succeeds, print a message and uninstall the pip version of the package
         echo "Successfully installed with conda: $package"
         pip uninstall -y $package
